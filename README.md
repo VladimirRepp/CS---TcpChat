@@ -7,6 +7,11 @@ Using:
 - .Net9
 - Console (for client and server)
 
+For launch:
+- run TcpServer.exe
+- run several TcpClientApp.exe 
+
+
 Example:
 ![Снимок экрана 2025-02-20 202412](https://github.com/user-attachments/assets/2cc137e5-6c59-4233-9663-a139f28da4a7)
 
