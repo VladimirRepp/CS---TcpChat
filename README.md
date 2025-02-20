@@ -8,8 +8,8 @@ Using:
 - Console (for client and server)
 
 For launch:
-- run TcpServer.exe
-- run several TcpClientApp.exe 
+- First run TcpServer.exe
+- Second run several TcpClientApp.exe 
 
 
 Example:
