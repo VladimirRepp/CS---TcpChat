@@ -1,0 +1,14 @@
+D:\Сетевое программирование\Sample_4 - TCP чат\TcpServer\TcpServer\obj\Debug\net9.0\TcpServer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Сетевое программирование\Sample_4 - TCP чат\TcpServer\TcpServer\obj\Debug\net9.0\TcpServer.AssemblyInfoInputs.cache
+D:\Сетевое программирование\Sample_4 - TCP чат\TcpServer\TcpServer\obj\Debug\net9.0\TcpServer.AssemblyInfo.cs
+D:\Сетевое программирование\Sample_4 - TCP чат\TcpServer\TcpServer\obj\Debug\net9.0\TcpServer.csproj.CoreCompileInputs.cache
+D:\Сетевое программирование\Sample_4 - TCP чат\TcpServer\TcpServer\bin\Debug\net9.0\TcpServer.exe
+D:\Сетевое программирование\Sample_4 - TCP чат\TcpServer\TcpServer\bin\Debug\net9.0\TcpServer.deps.json
+D:\Сетевое программирование\Sample_4 - TCP чат\TcpServer\TcpServer\bin\Debug\net9.0\TcpServer.runtimeconfig.json
+D:\Сетевое программирование\Sample_4 - TCP чат\TcpServer\TcpServer\bin\Debug\net9.0\TcpServer.dll
+D:\Сетевое программирование\Sample_4 - TCP чат\TcpServer\TcpServer\bin\Debug\net9.0\TcpServer.pdb
+D:\Сетевое программирование\Sample_4 - TCP чат\TcpServer\TcpServer\obj\Debug\net9.0\TcpServer.dll
+D:\Сетевое программирование\Sample_4 - TCP чат\TcpServer\TcpServer\obj\Debug\net9.0\refint\TcpServer.dll
+D:\Сетевое программирование\Sample_4 - TCP чат\TcpServer\TcpServer\obj\Debug\net9.0\TcpServer.pdb
+D:\Сетевое программирование\Sample_4 - TCP чат\TcpServer\TcpServer\obj\Debug\net9.0\TcpServer.genruntimeconfig.cache
+D:\Сетевое программирование\Sample_4 - TCP чат\TcpServer\TcpServer\obj\Debug\net9.0\ref\TcpServer.dll
