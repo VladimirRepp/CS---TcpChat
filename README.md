@@ -11,8 +11,8 @@ For launch:
 - First run TcpServer.exe
 - Second run several TcpClientApp.exe 
 
-
 Example:
+
 ![Снимок экрана 2025-02-20 202412](https://github.com/user-attachments/assets/2cc137e5-6c59-4233-9663-a139f28da4a7)
 
 ![Снимок экрана 2025-02-20 202500](https://github.com/user-attachments/assets/2b782b24-181a-4b2f-8683-2aa6aa93e1fa)
