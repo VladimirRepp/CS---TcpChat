@@ -6,6 +6,7 @@ Using:
 - System.Net.Sockets
 - .Net9
 - Console (for client and server)
+- IDE: MVS 2022
 
 For launch:
 - First run TcpServer.exe
