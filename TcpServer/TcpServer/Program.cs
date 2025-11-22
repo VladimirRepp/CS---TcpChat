@@ -1,11 +1,15 @@
-﻿namespace TcpServerApp
+using TcpServer.Services;
+
+namespace TcpServerApp
 {
     internal class Program
     {
         static async Task Main(string[] args)
         {
-            ServerObject server = new();   
+            ILogger logger = new ConsoleLogger();
+            ServerObject server = new(logger);   
             await server.ListenAsync(); // запускам сервер - ждем новых клиентов
         }
     }
 }
+
