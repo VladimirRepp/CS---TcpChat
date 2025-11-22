@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Net.Sockets;
+using TcpServer.Services;
 
 namespace TcpServerApp
 {
@@ -7,10 +8,14 @@ namespace TcpServerApp
     {
         private TcpListener _tcpListener;
         private List<ClientObject> _clients;
+        private ILogger _logger;
 
-        protected internal ServerObject()
+        protected internal ServerObject(IPEndPoint endPoint, ILogger logger)
         {
-            _tcpListener = new(IPAddress.Any, 8888);
+            //_tcpListener = new(IPAddress.Any, 8888);
+            _tcpListener = new(endPoint);
+            _logger = logger;
+            
             _clients = new List<ClientObject>();
         }
 
@@ -28,16 +33,19 @@ namespace TcpServerApp
                 while (true)
                 {
                     TcpClient tcpClient = await _tcpListener.AcceptTcpClientAsync();
-
-                    ClientObject clientObject = new(tcpClient, this);
+                    // TODO: авто определить тип и создать нужные 
+                    ILogger logger = new ConsoleLogger();
+                    
+                    ClientObject clientObject = new(tcpClient, this, logger);
                     _clients.Add(clientObject);
 
-                    Task.Run(clientObject.UpdateAsync);
+                    await clientObject.StartupAsync();
+                    await clientObject.UpdateAsync;
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"ServerObject.ListenAsync(Exception): {ex.Message}");
+                _logger.Log($"ServerObject.ListenAsync: {ex.Message}");
             }
             finally
             {
@@ -131,3 +139,4 @@ namespace TcpServerApp
         }
     }
 }
+
