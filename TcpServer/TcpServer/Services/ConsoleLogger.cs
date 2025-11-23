@@ -2,9 +2,10 @@
 {
     internal class ConsoleLogger : ILogger
     {
-        public void Log(string message, ELoggerType type = ELoggerType.Info)
+        public void Log(string message, ELogType type = ELogType.Info)
         {
             Console.WriteLine($"[{type}]: {message}");
         }
     }
 }
+
