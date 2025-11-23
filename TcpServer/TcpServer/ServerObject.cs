@@ -23,7 +23,7 @@ namespace TcpServerApp
         /// Прослущивание входящих подключений
         /// </summary>
         /// <returns></returns>
-        protected internal async Task ListenAsync()
+        protected internal async Task UpdateListenAsync()
         {
             try
             {
@@ -139,5 +139,6 @@ namespace TcpServerApp
         }
     }
 }
+
 
 
