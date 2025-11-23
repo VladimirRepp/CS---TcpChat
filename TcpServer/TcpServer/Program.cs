@@ -8,8 +8,11 @@ namespace TcpServerApp
         {
             ILogger logger = new ConsoleLogger();
             ServerObject server = new(logger);   
-            await server.ListenAsync(); // запускам сервер - ждем новых клиентов
+
+            // TODO: в потоке или в таске?
+            await server.UpdateListenAsync(); // запускам сервер - ждем новых клиентов
         }
     }
 }
+
 
