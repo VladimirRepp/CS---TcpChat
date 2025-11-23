@@ -88,7 +88,7 @@ namespace TcpServerApp
         /// <summary>
         /// Закрытие ресурсов клиента
         /// </summary>
-        public internal void Close()
+        public void Close()
         {
             Reader.Close();
             Writer.Close();
@@ -141,6 +141,7 @@ namespace TcpServerApp
         Muslticast
     }
 }
+
 
 
 
