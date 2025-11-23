@@ -53,6 +53,8 @@ namespace TcpServerApp
         {
             try
             {
+                string? message;
+                
                 // В бесконечном цикле получаем сообщения от клиента
                 while (true)
                 {
@@ -139,5 +141,6 @@ namespace TcpServerApp
         Muslticast
     }
 }
+
 
 
