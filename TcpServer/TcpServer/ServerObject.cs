@@ -28,7 +28,7 @@ namespace TcpServerApp
             try
             {
                 _tcpListener.Start();
-                Console.WriteLine("Сервер запущен. Ожидание подключений ...");
+                _logger.Log("Сервер запущен. Ожидание подключений ...");
 
                 while (true)
                 {
@@ -139,6 +139,7 @@ namespace TcpServerApp
         }
     }
 }
+
 
 
 
