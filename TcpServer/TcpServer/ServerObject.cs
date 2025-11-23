@@ -45,7 +45,7 @@ namespace TcpServerApp
             }
             catch (Exception ex)
             {
-                _logger.Log($"ServerObject.ListenAsync: {ex.Message}");
+                _logger.Log($"ServerObject.ListenAsync: {ex.Message}", ELogType.Error);
             }
             finally
             {
@@ -139,4 +139,5 @@ namespace TcpServerApp
         }
     }
 }
+
 
