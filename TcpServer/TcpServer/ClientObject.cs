@@ -41,7 +41,7 @@ namespace TcpServerApp
             }
             catch (Exception ex)
             {
-                _logger.Log($"ClientObject.StartupAsync: {ex.Message}");
+                _logger.Log($"ClientObject.StartupAsync: {ex.Message}", ELogType.Error);
             }
         }
         
@@ -75,7 +75,7 @@ namespace TcpServerApp
             }
             catch (Exception ex)
             {
-                _logger.Log($"ClientObject.UpdateAsync(Exception): {ex.Message}");
+                _logger.Log($"ClientObject.UpdateAsync(Exception): {ex.Message}", ELogType.Error);
             }
             finally
             {
@@ -139,4 +139,5 @@ namespace TcpServerApp
         Muslticast
     }
 }
+
 
