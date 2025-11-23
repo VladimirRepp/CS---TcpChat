@@ -19,6 +19,23 @@ namespace TcpServerApp
             _clients = new List<ClientObject>();
         }
 
+        // <summary>
+        /// Инициализируем подключение 
+        /// </summary>
+        /// <returns></returns>
+        private async Task StartupAsync()
+        {
+          try
+          {    
+              _tcpListener.Start();
+              _logger.Log("Сервер запущен. Ожидание подключений ...");
+          }
+          catch (Exception ex)
+          {
+              _logger.Log($"ServerObject.StartupAsync: {ex.Message}", ELogType.Error);
+          }           
+        }
+
         /// <summary>
         /// Прослущивание входящих подключений
         /// </summary>
@@ -27,9 +44,6 @@ namespace TcpServerApp
         {
             try
             {
-                _tcpListener.Start();
-                _logger.Log("Сервер запущен. Ожидание подключений ...");
-
                 while (true)
                 {
                     TcpClient tcpClient = await _tcpListener.AcceptTcpClientAsync();
@@ -139,6 +153,7 @@ namespace TcpServerApp
         }
     }
 }
+
 
 
 
