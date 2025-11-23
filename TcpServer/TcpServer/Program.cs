@@ -10,9 +10,11 @@ namespace TcpServerApp
             ServerObject server = new(logger);   
 
             // TODO: в потоке или в таске?
+            await server.(); // запускам сервер - ждем новых клиентов
             await server.UpdateListenAsync(); // запускам сервер - ждем новых клиентов
         }
     }
 }
+
 
 
