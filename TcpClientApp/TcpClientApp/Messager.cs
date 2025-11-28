@@ -47,8 +47,8 @@ namespace TcpClientApp
             
              _client.Connect(_serverEndPoint);
 
-            _reader = new StreamReader(_client.GetStream());
-            _writer = new StreamWriter(_client.GetStream());
+            _reader = new (_client.GetStream());
+            _writer = new (_client.GetStream());
 
             if (_reader is null || _writer is null)
             {
@@ -78,6 +78,7 @@ namespace TcpClientApp
         }
     }
 }
+
 
 
 
