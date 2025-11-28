@@ -7,7 +7,8 @@ namespace TcpServerApp
         static async Task Main(string[] args)
         {
             ILogger logger = new ConsoleLogger();
-            ServerObject server = new(logger);   
+            IPEndPoint endPoint = new(IPAddress.Any, 8888);
+            ServerObject server = new(endPoint, logger);   
 
             // TODO: в потоке или в таске?
             await server.StartupAsync();         // запускам сервер
@@ -15,3 +16,4 @@ namespace TcpServerApp
         }
     }
 }
+
