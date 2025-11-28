@@ -31,7 +31,7 @@ namespace TcpClientApp
             Startup();
         }
 
-        public Messager(string userName, IPEndPonit serverEndPoint)
+        public Messager(string userName, IPEndPoint serverEndPoint)
         {
             _userName = userName;
             _serverEndPoint = serverEndPoint;
@@ -74,6 +74,7 @@ namespace TcpClientApp
         }
     }
 }
+
 
 
 
