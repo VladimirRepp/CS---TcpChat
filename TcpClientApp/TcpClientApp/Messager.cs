@@ -11,7 +11,7 @@ namespace TcpClientApp
 
         private static string _host;
         private static int _port;
-        private static IPEndPoint serverEndPoint;
+        private static IPEndPoint? serverEndPoint = null;
 
         private static StreamReader? _reader = null;
         private static StreamWriter? _writer = null;
@@ -62,7 +62,10 @@ namespace TcpClientApp
 
         private void Startup()
         {
-             _client.Connect(_host, _port);
+            if(_serverEndPoint == null)
+                _serverEndPoint = new(_host, _port);
+            
+             _client.Connect(_serverEndPoint);
 
             _reader = new StreamReader(_client.GetStream());
             _writer = new StreamWriter(_client.GetStream());
@@ -74,6 +77,7 @@ namespace TcpClientApp
         }
     }
 }
+
 
 
 
