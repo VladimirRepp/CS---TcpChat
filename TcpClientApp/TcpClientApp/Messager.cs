@@ -28,15 +28,7 @@ namespace TcpClientApp
             _host = host;
             _port = port;
 
-            _client.Connect(_host, _port);
-
-            _reader = new StreamReader(_client.GetStream());
-            _writer = new StreamWriter(_client.GetStream());
-
-            if (_reader is null || _writer is null)
-            {
-                throw new Exception($"Messager.Messager: StreamReader or StreamWriter is NULL!");
-            }
+            Startup();
         }
 
         public Messager(string userName, IPEndPonit serverEndPoint)
@@ -44,15 +36,7 @@ namespace TcpClientApp
             _userName = userName;
             _serverEndPoint = serverEndPoint;
 
-            _client.Connect(_host, _port);
-
-            _reader = new StreamReader(_client.GetStream());
-            _writer = new StreamWriter(_client.GetStream());
-
-            if (_reader is null || _writer is null)
-            {
-                throw new Exception($"Messager.Messager: StreamReader or StreamWriter is NULL!");
-            }
+           Startup();
         }
 
         /// <summary>
@@ -75,8 +59,22 @@ namespace TcpClientApp
             string? message = await _reader.ReadLineAsync();
             return message;
         }
+
+        private void Startup()
+        {
+             _client.Connect(_host, _port);
+
+            _reader = new StreamReader(_client.GetStream());
+            _writer = new StreamWriter(_client.GetStream());
+
+            if (_reader is null || _writer is null)
+            {
+                throw new Exception($"Messager.Messager: StreamReader or StreamWriter is NULL!");
+            }
+        }
     }
 }
+
 
 
 
