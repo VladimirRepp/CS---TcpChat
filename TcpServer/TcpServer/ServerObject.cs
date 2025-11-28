@@ -54,7 +54,7 @@ namespace TcpServerApp
                     _clients.Add(clientObject);
 
                     await clientObject.StartupAsync();
-                    await clientObject.UpdateAsync;
+                    await clientObject.UpdateAsync();
                 }
             }
             catch (Exception ex)
@@ -153,6 +153,7 @@ namespace TcpServerApp
         }
     }
 }
+
 
 
 
