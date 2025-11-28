@@ -13,9 +13,10 @@ namespace TcpServerApp
 
             // TODO: в потоке или в таске?
             await server.StartupAsync();         // запускам сервер
-            await server.UpdateListenAsync();    // делаем прослушку
+            await server.UpdateListenAsync();    // делаем прослушку - (в поток?)
         }
     }
 }
+
 
 
