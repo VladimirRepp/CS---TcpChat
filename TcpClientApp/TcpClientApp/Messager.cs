@@ -1,4 +1,5 @@
-﻿using System.Net.Sockets;
+using System.Net;
+using System.Net.Sockets;
 using System.Reflection.PortableExecutable;
 
 namespace TcpClientApp
@@ -10,6 +11,7 @@ namespace TcpClientApp
 
         private static string _host;
         private static int _port;
+        private static IPEndPoint endPoint;
 
         private static StreamReader? _reader = null;
         private static StreamWriter? _writer = null;
@@ -59,3 +61,4 @@ namespace TcpClientApp
         }
     }
 }
+
