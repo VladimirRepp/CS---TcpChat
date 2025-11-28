@@ -107,8 +107,7 @@ namespace TcpServerApp
             {
                 if(client.ID != senderID)
                 {
-                    await client.Writer.WriteLineAsync($"{from}: " + message);
-                    await client.Writer.FlushAsync();
+                    await SendMessage(cleint, from, message);
                 }
             }
         }
@@ -127,8 +126,7 @@ namespace TcpServerApp
             {
                 if (client.ID == recipientID)
                 {
-                    await client.Writer.WriteLineAsync($"{from}: " + message);
-                    await client.Writer.FlushAsync();
+                    await SendMessage(cleint, from, message);
                 }
             }
         }
@@ -147,13 +145,18 @@ namespace TcpServerApp
             {
                 if (recipientsID.FirstOrDefault(x => x == client.ID) != null)
                 {
-                    await client.Writer.WriteLineAsync($"{from}: " + message);
-                    await client.Writer.FlushAsync();
+                    await SendMessage(cleint, from, message);
                 }
             }
         }
+
+        private async Task SendMessage(ClientObject client, string? from, string message){
+            await client.Writer.WriteLineAsync($"{from}: " + message);
+            await client.Writer.FlushAsync();
+        }
     }
 }
+
 
 
 
