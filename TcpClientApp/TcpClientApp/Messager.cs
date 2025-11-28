@@ -27,16 +27,33 @@ namespace TcpClientApp
             _userName = userName;
             _host = host;
             _port = port;
-
-            Startup();
         }
 
         public Messager(string userName, IPEndPoint serverEndPoint)
         {
             _userName = userName;
             _serverEndPoint = serverEndPoint;
+        }
 
-           Startup();
+        /// <summary>
+        /// Начало работы мессенджера, ассинхронная инициализация 
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        public async Task Startup()
+        {
+            if(_serverEndPoint == null)
+                _serverEndPoint = new(IPAddress.Parse(_host), _port);
+            
+             _client.Connect(_serverEndPoint);
+
+            _reader = new StreamReader(_client.GetStream());
+            _writer = new StreamWriter(_client.GetStream());
+
+            if (_reader is null || _writer is null)
+            {
+                throw new Exception($"Messager.Messager: StreamReader or StreamWriter is NULL!");
+            }
         }
 
         /// <summary>
@@ -59,24 +76,9 @@ namespace TcpClientApp
             string? message = await _reader.ReadLineAsync();
             return message;
         }
-
-        private void Startup()
-        {
-            if(_serverEndPoint == null)
-                _serverEndPoint = new(IPAddress.Parse(_host), _port);
-            
-             _client.Connect(_serverEndPoint);
-
-            _reader = new StreamReader(_client.GetStream());
-            _writer = new StreamWriter(_client.GetStream());
-
-            if (_reader is null || _writer is null)
-            {
-                throw new Exception($"Messager.Messager: StreamReader or StreamWriter is NULL!");
-            }
-        }
     }
 }
+
 
 
 
