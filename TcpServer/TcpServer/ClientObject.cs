@@ -13,9 +13,9 @@ namespace TcpServerApp
 
         private TcpClient _client;
         private ServerObject _server;
-        private ILogger _logger;
+        private ILogger? _logger;
 
-        public ClientObject(TcpClient client, ServerObject server, ILogger logger)
+        public ClientObject(TcpClient client, ServerObject server, ILogger? logger)
         {
             _client = client;
             _server = server;
@@ -41,7 +41,7 @@ namespace TcpServerApp
             }
             catch (Exception ex)
             {
-                _logger.Log($"ClientObject.StartupAsync: {ex.Message}", ELogType.Error);
+                _logger?.Log($"ClientObject.StartupAsync: {ex.Message}", ELogType.Error);
             }
         }
         
@@ -77,7 +77,7 @@ namespace TcpServerApp
             }
             catch (Exception ex)
             {
-                _logger.Log($"ClientObject.UpdateAsync(Exception): {ex.Message}", ELogType.Error);
+                _logger?.Log($"ClientObject.UpdateAsync(Exception): {ex.Message}", ELogType.Error);
             }
             finally
             {
@@ -104,7 +104,7 @@ namespace TcpServerApp
         private async Task SendMessageAsync(string from, string message)
         {
             await _server.BroadcastSendMessageAsync(from, message, ID);
-            _logger.Log($"{from}: " + message);
+            _logger?.Log($"{from}: " + message);
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace TcpServerApp
         private async Task SendMessageAsync(string from, string message, string recipientID)
         {
             await _server.SinglecastSendMessageAsync(from, message, ID, recipientID);
-            _logger.Log($"{from}: " + message);
+            _logger?.Log($"{from}: " + message);
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace TcpServerApp
         private async Task SendMessageAsync(string from, string message, List<string> recipientsID)
         {
             await _server.MulticastSendMessageAsync(from, message, ID, recipientsID);
-            _logger.Log($"{from}: " + message);
+            _logger?.Log($"{from}: " + message);
         }
     }
 
@@ -141,6 +141,7 @@ namespace TcpServerApp
         Muslticast
     }
 }
+
 
 
 
