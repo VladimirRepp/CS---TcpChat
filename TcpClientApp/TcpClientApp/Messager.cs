@@ -63,7 +63,7 @@ namespace TcpClientApp
         private void Startup()
         {
             if(_serverEndPoint == null)
-                _serverEndPoint = new(_host, _port);
+                _serverEndPoint = new(IPAddress.Parse(_host), _port);
             
              _client.Connect(_serverEndPoint);
 
@@ -77,6 +77,7 @@ namespace TcpClientApp
         }
     }
 }
+
 
 
 
