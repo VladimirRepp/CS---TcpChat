@@ -52,7 +52,7 @@ namespace TcpClientApp
 
             if (_reader is null || _writer is null)
             {
-                throw new Exception($"Messager.Messager: StreamReader or StreamWriter is NULL!");
+                throw new Exception($"Messager.Startup: StreamReader or StreamWriter is NULL!");
             }
         }
 
@@ -78,6 +78,7 @@ namespace TcpClientApp
         }
     }
 }
+
 
 
 
