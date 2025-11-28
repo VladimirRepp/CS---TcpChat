@@ -10,6 +10,8 @@ namespace TcpClientApp
         {
             try
             {
+                await _messager.Startup();
+                
                 Console.WriteLine("Введите имя пользователя: ");
                 string userName = Console.ReadLine();
 
@@ -97,3 +99,4 @@ namespace TcpClientApp
         }
     }
 }
+
