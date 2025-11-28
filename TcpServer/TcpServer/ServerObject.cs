@@ -10,7 +10,7 @@ namespace TcpServerApp
         private List<ClientObject> _clients;
         private ILogger _logger;
 
-        protected internal ServerObject(IPEndPoint endPoint, ILogger logger)
+        piblic ServerObject(IPEndPoint endPoint, ILogger logger)
         {
             //_tcpListener = new(IPAddress.Any, 8888);
             _tcpListener = new(endPoint);
@@ -156,6 +156,7 @@ namespace TcpServerApp
         }
     }
 }
+
 
 
 
