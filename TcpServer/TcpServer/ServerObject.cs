@@ -53,6 +53,7 @@ namespace TcpServerApp
                     ClientObject clientObject = new(tcpClient, this, logger);
                     _clients.Add(clientObject);
 
+                    // TODO: верно ли?
                     await clientObject.StartupAsync();
                     await clientObject.UpdateAsync();
                 }
@@ -153,6 +154,7 @@ namespace TcpServerApp
         }
     }
 }
+
 
 
 
