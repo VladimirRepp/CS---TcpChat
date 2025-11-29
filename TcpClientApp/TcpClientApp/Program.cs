@@ -9,9 +9,7 @@ namespace TcpClientApp
         static async Task Main(string[] args)
         {
             try
-            {
-                await _messager.Startup();
-                
+            {   
                 Console.WriteLine("Введите имя пользователя: ");
                 string userName = Console.ReadLine();
 
@@ -20,6 +18,7 @@ namespace TcpClientApp
                 Console.WriteLine($"Добро пожаловать {userName}!");
 
                 _messager = new(userName);
+                await _messager.Startup();
 
                 // TODO: new Thread?
                 Task.Run(() => UpdateReceiveMessageAsync());
@@ -99,4 +98,5 @@ namespace TcpClientApp
         }
     }
 }
+
 
