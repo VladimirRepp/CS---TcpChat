@@ -21,7 +21,7 @@ namespace TcpClientApp
                 await _messager.Startup();
 
                 // TODO: new Thread?
-                Task.Run(() => UpdateReceiveMessageAsync());
+                Task.Run(() => UpdateReceiveMessageAsync()); // Task.Run ?
 
                 // TODO: new Thread?
                 await UpdateSendMessageAsync();
@@ -99,6 +99,7 @@ namespace TcpClientApp
         }
     }
 }
+
 
 
 
