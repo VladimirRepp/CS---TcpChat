@@ -7,6 +7,7 @@ Using:
 - .Net9
 - Console (for client and server)
 - IDE: MVS 2022
+- [Based - metanit.com](https://metanit.com/sharp/net/4.4.php)
 
 For launch:
 - First run TcpServer.exe
@@ -20,4 +21,4 @@ Example:
 
 ![Снимок экрана 2025-02-20 202522](https://github.com/user-attachments/assets/ab325a54-ff1f-41cb-a052-2ac386ff75d8)
 
-[Based](https://metanit.com/sharp/net/4.4.php)
+
