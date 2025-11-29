@@ -10,7 +10,7 @@ Using:
 
 For launch:
 - First run TcpServer.exe
-- Second run several TcpClientApp.exe 
+- Second run several TcpClientApp.exe
 
 Example:
 
@@ -19,3 +19,5 @@ Example:
 ![Снимок экрана 2025-02-20 202500](https://github.com/user-attachments/assets/2b782b24-181a-4b2f-8683-2aa6aa93e1fa)
 
 ![Снимок экрана 2025-02-20 202522](https://github.com/user-attachments/assets/ab325a54-ff1f-41cb-a052-2ac386ff75d8)
+
+[Based](https://metanit.com/sharp/net/4.4.php)
