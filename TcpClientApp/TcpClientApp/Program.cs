@@ -23,6 +23,7 @@ namespace TcpClientApp
                 // TODO: new Thread?
                 Task.Run(() => UpdateReceiveMessageAsync());
 
+                // TODO: new Thread?
                 await UpdateSendMessageAsync();
             }
             catch (Exception ex)
@@ -98,5 +99,6 @@ namespace TcpClientApp
         }
     }
 }
+
 
 
