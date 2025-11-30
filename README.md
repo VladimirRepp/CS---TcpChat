@@ -20,7 +20,9 @@ Example:
 New screenshots:
 ![1](https://github.com/user-attachments/assets/85f66af2-6073-4b92-b0c1-c118c1794134)
 
+
 ![2](https://github.com/user-attachments/assets/b30e6bc4-9ac4-469e-bbb9-208f685684da)
+
 
 ![3](https://github.com/user-attachments/assets/b25503a7-cfc9-43c8-92a8-38292cd6ae6b)
 
